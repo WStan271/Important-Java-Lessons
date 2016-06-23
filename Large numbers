@@ -26,7 +26,7 @@ class Solution{
             //if(x ==(short)x)System.out.println("* short");
             //if(x ==(int)x)System.out.println("* int");
             //if(x ==(long)x)System.out.println("* long");
-                
+                //
             }
             catch(Exception e)
             {
