@@ -1,0 +1,24 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+
+class ReverseString
+{
+	public static void main (String[] args) 
+	{
+	
+	String a = "Madam, I'm Adam"; //The String to be reversed
+	int length = a.length();      //Obtain length of string
+	int length2 =a.length();      //A copy of the string's length
+	char [] chars = new char [length]; //Create a character array to match the length of the string
+	
+	for(int i =0; i<length;i++) //Loop that fills the char array in reverse order of the string
+	{
+	chars [i] = a.charAt(length2-1);
+	length2--;
+	}
+	String j = new String(chars); //Turn the char array into a string
+	System.out.println(j);       //Output the reversed string
+	}
+}
