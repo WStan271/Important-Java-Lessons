@@ -6,43 +6,30 @@ public class Solution {
     public static void main(String[] args) {
         
         Scanner sc=new Scanner(System.in);
-        String A =sc.next();
-       int size = A.length();
-  //We are going to use a point system to make check that the word is palindrome
-        int points = 0;
-        //Create two char arrays that we compare
-        char array[] = new char[size];
-        char arrayCopy[] = new char[size];
-       //We are converting the string to a character and storing it in an array
+        String A=sc.next();
+        int length = A.length();
+        int lengthCopy = A.length(); //We need a copy of the length because we are going to update it's value
+        int flag =0; 
+        char [] chars = A.toCharArray();  //I change the string into a char array to make it easier to work with
         
-  for(int i = 0; i<size;i++)      
-     {
-      array [i] = A.charAt(i);
-            }   
-        
-   for(int j = 0; j<size;j++)      
-     {
-      arrayCopy [j] = A.charAt(j);
+        for (int i =0; i<length;i++)
+            {
+            if(chars [i] == chars[lengthCopy-1]) //I compare the first letter with the last letter
+                {
+                flag++;
+            }
+            lengthCopy--;
             
-  }  
-      
- //We are going to compare both arrays to make sure that the characters are the same. If they are the same then a point is earned.
-  
-  for (int z =0; z<size;z++) 
-      {
-       //We are going to compare index 0 of the first array with the last index of the second array 
-      if(array[z] == arrayCopy[size-(z+1)]) 
-         
-          {
-          points = points +1;
-      }
-  }
-        //If it's palindrome then you get a yes and no if otherwise
-       
-            System.out.print(points==size?"Yes":"No");
-    
-
-        
+            
+            }
+        if(flag == length) //If the length matches the flag then it's palindrome
+                {
+                System.out.print("Yes");
+            }
+            else
+                {
+                System.out.print("No");
+        }
         
     }
 }
